@@ -15,5 +15,16 @@
   "bugs": {
     "url": "https://github.com/rafaelkyrdan/up-and-running-preact/issues"
   },
-  "homepage": "https://github.com/rafaelkyrdan/up-and-running-preact#readme"
+  "homepage": "https://github.com/rafaelkyrdan/up-and-running-preact#readme",
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-plugin-transform-react-jsx": "^6.24.1",
+    "babel-preset-env": "^1.6.0",
+    "webpack": "^3.5.5",
+    "webpack-dev-server": "^2.7.1"
+  },
+  "dependencies": {
+    "preact": "^8.2.5"
+  }
 }
