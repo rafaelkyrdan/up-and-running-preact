@@ -1,0 +1,19 @@
+{
+  "name": "up-and-running-preact",
+  "version": "1.0.2",
+  "description": "Up and running Preact",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rafaelkyrdan/up-and-running-preact.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rafaelkyrdan/up-and-running-preact/issues"
+  },
+  "homepage": "https://github.com/rafaelkyrdan/up-and-running-preact#readme"
+}
