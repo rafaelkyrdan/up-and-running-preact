@@ -1,6 +1,10 @@
 import { h, preact, Component } from 'preact';
 import User from './User';
 import linkState from 'linkstate';
+import { Router } from 'preact-router';
+import Home from './Home';
+import Profile from './Profile';
+import Error from './Error';
 
 const users = [
 	{image: 'https://avatars2.githubusercontent.com/u/1071460?v=4&s=460', name: 'Rafael Kyrdan'},
@@ -11,8 +15,6 @@ export class App extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			users: [],
-			loading: true,
 			text: ''
 		}
 		this.setText = this.setText.bind(this);
@@ -20,16 +22,7 @@ export class App extends Component {
 	}
 
 	componentDidMount() {
-		fetch(this.props.config.urls.user)
-			.then(resp => resp.json())
-			.then(user => {
-				console.log(user);
-				this.setState({
-					users: [user],
-					loading: false	
-				})
-			})
-			.catch(err => console.log(err));
+		
 	}
 
 	setText(e) {
@@ -46,11 +39,14 @@ export class App extends Component {
 	render(props, {loading, users, text}) {
 		return (
 			<div class="app">
-				<h1>Hello world!</h1>
-				{loading
-					? <p>Please wait ...</p>
-					: users.map(user => <User name={user.name} image={user.avatar_url} key={user.name} />)
-				}
+				<h1>Up and running Preact!</h1>
+
+				<Router>
+					<Home path="/" />
+					<Profile path="/profile/:user" />
+					<Error default />
+				</Router>
+
 				<div>
 					<form onSubmit={this.submit} action="javascript:">
 						<input type="text" value={text} onInput={linkState(this, 'text')} />
@@ -61,16 +57,5 @@ export class App extends Component {
 		);
 	}	
 }
-
-/*
-export function App() {
-	return (
-		<div class="app">
-			<h1>Hello world!</h1>
-			{users.map(user => <User {...user} key={user.name} />)}
-		</div>
-	);
-}
-*/
 
 export default App;
