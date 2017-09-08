@@ -49,13 +49,7 @@ export class App extends Component {
 						<Route component={Error} />
 					</Switch>
 				</Router>
-
-				<div>
-					<form onSubmit={this.submit} action="javascript:">
-						<input type="text" value={text} onInput={linkState(this, 'text')} />
-					</form>					
-					<pre><code>{JSON.stringify(this.state, null, 2)}</code></pre>
-				</div>								
+				
 			</div>			
 		);
 	}	
