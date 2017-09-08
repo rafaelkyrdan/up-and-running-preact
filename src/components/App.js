@@ -1,7 +1,8 @@
 import { h, preact, Component } from 'preact';
 import User from './User';
 import linkState from 'linkstate';
-import { Router } from 'preact-router';
+//import { Router } from 'preact-router';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Home from './Home';
 import Profile from './Profile';
 import Error from './Error';
@@ -42,9 +43,11 @@ export class App extends Component {
 				<h1>Up and running Preact!</h1>
 
 				<Router>
-					<Home path="/" />
-					<Profile path="/profile/:user" />
-					<Error default />
+					<Switch>
+						<Route exact path="/" component={Home} />
+						<Route path="/profile/:user" component={Profile} />
+						<Route component={Error} />
+					</Switch>
 				</Router>
 
 				<div>

@@ -1,11 +1,14 @@
 import { h } from 'preact';
+import { Link } from 'react-router-dom';
 
 
 export function Error(props) {
 	return (
 			<section>
 				<p>Error!!</p>
-				<p><a href="/" >Home</a></p>
+				<p>
+					<Link to="/">Home</Link>
+				</p>
 			</section>
 		);
 }
