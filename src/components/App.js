@@ -28,13 +28,13 @@ export class App extends Component {
 			.catch(err => console.log(err));
 	}
 
-	render() {
+	render(props, {loading, users}) {
 		return (
 			<div class="app">
 				<h1>Hello world!</h1>
-				{this.state.loading
+				{loading
 					? <p>Please wait ...</p>
-					: this.state.users.map(user => <User name={user.name} image={user.avatar_url} key={user.name} />)
+					: users.map(user => <User name={user.name} image={user.avatar_url} key={user.name} />)
 				}								
 			</div>
 		);
